@@ -1,0 +1,1678 @@
+{
+    "Format": "2.2.0",
+    "Changes": [
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/germbox",
+            "FromFile": "assets/{{TargetWithoutPath}}.png",
+            "LogName": "Sapling Box Sprite Load"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/BigCraftables",
+            "Entries": {
+                "Fenler.sgb_SaplingGerminationBox": {
+                    "Name": "Sapling Germination Box",
+                    "DisplayName": "{{i18n: SaplingGerminationBox.name}}",
+                    "Description": "{{i18n: SaplingGerminationBox.description}}",
+                    "Price": 50,
+                    "Fragility": 0,
+                    "CanBePlacedOutdoors": true,
+                    "CanBePlacedIndoors": true,
+                    "IsLamp": false,
+                    "Texture": "Mods/{{ModId}}/germbox",
+                    "SpriteIndex": 0
+                },
+            },
+            "LogName": "BigCraftable data"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/CraftingRecipes",
+            "Entries": {
+                "SaplingGerminationBox": "388 25 382 10 334 1/Home/SaplingGerminationBox/true/l 5/",
+            }
+        },
+    {
+    "LogName": "Add default machine rules",
+    "Action": "EditData",
+    "Target": "Data/Machines",
+    "Entries": {
+        "(BC)Fenler.sgb_SaplingGerminationBox": {
+            "OutputRules": [
+                {
+                    "Id": "Default",
+                    "Triggers": [
+                        {
+                            "Id": "ItemPlacedInMachine",
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": null,
+                            "RequiredTags": null,
+                            "RequiredCount": 3,
+                            "Condition": null
+                        }
+                    ],
+                    "UseFirstValidOutput": false,
+                    "OutputItem": [
+                        {
+                            "OutputMethod": "StardewValley.Object, Stardew Valley: OutputSeedMaker",
+                            "IncrementMachineParentSheetIndex": 0,
+                            "Id": "Default",
+                            "ItemId": null,
+                            "MinStack": 4,
+                            "MaxStack": 6,
+                            "Quality": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 20,
+                    "RecalculateOnCollect": false
+                }
+            ],
+	"AdditionalConsumedItems":
+	[{"ItemId":"368",}],
+            "LoadEffects": [
+                {
+                    "Id": "Default",
+                    "Condition": null,
+                    "Sounds": [
+                        {
+                            "Id": "Ship",
+                            "Delay": 0
+                            
+                        },
+                        {
+                            "Id": "dirtyHit",
+                            "Delay": 250
+                            
+                        }
+                    ],
+                    "Interval": 100,
+                    "Frames": null,
+                    "ShakeDuration": -1,
+                    "TemporarySprites": null
+                }
+            ],
+            "AllowLoadWhenFull": false,
+            "WobbleWhileWorking": false,
+            "ShowNextIndexWhileWorking": false,
+            "ShowNextIndexWhenReady": true,
+            "IsIncubator": false,
+            "AllowFairyDust": true,
+        }}},
+    {"LogName": "Add base compat to the Sapling Germination Box",
+    "Action": "EditData",
+    "Target": "Data/Machines",
+    "TargetField": [
+        "(BC)Fenler.sgb_SaplingGerminationBox",
+        "OutputRules"
+    ],
+        "Entries": 
+            {"Fenler.sgb_BananaSapling":
+                {
+                    "Id": "Fenler.sgb_BananaSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "91",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "BananaSapling",
+                            "ItemId": "(O)69",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Fenler.sgb_CherrySapling":
+                {
+                    "Id": "Fenler.sgb_CherrySapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "638",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "CherrySapling",
+                            "ItemId": "(O)628",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Fenler.sgb_ApricotSapling":
+                {
+                    "Id": "Fenler.sgb_ApricotSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "634",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "ApricotSapling",
+                            "ItemId": "(O)629",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Fenler.sgb_OrangeSapling":
+                {
+                    "Id": "Fenler.sgb_OrangeSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "635",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "OrangeSapling",
+                            "ItemId": "(O)630",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Fenler.sgb_PeachSapling":
+                {
+                    "Id": "Fenler.sgb_PeachSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "636",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "PeachSapling",
+                            "ItemId": "(O)631",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Fenler.sgb_PomegranateSapling":
+                {
+                    "Id": "Fenler.sgb_PomegranateSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "637",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "PomegranateSapling",
+                            "ItemId": "(O)632",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Fenler.sgb_AppleSapling":
+                {
+                    "Id": "Fenler.sgb_AppleSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "613",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "AppleSapling",
+                            "ItemId": "(O)633",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Fenler.sgb_MangoSapling":
+                {
+                    "Id": "Fenler.sgb_MangoSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "834",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "MangoSapling",
+                            "ItemId": "(O)835",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                }
+        },
+    "MoveEntries": [
+        { "ID": "Fenler.sgb_BananaSapling", "BeforeID": "Default" },
+        { "ID": "Fenler.sgb_CherrySapling", "BeforeID": "Default" },
+        { "ID": "Fenler.sgb_ApricotSapling", "BeforeID": "Default" },
+        { "ID": "Fenler.sgb_OrangeSapling", "BeforeID": "Default" },
+        { "ID": "Fenler.sgb_PeachSapling", "BeforeID": "Default" },
+        { "ID": "Fenler.sgb_PomegranateSapling", "BeforeID": "Default" },
+        { "ID": "Fenler.sgb_AppleSapling", "BeforeID": "Default" },
+        { "ID": "Fenler.sgb_MangoSapling", "BeforeID": "Default" }
+    ]
+},
+{
+    "LogName": "Add cornucopia more crops compat to the Sapling Germination Box",
+    "Action": "EditData",
+    "Target": "Data/Machines",
+    "TargetField": [
+        "(BC)Fenler.sgb_SaplingGerminationBox",
+        "OutputRules"
+    ],
+    "Entries": 
+        {
+            "Cornucopia.MoreCrops_AvocadoSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_AvocadoSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Avocado",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_AvocadoSapling",
+                            "ItemId": "(O)Cornucopia_AvocadoSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_CocoaPodSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_CocoaPodSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_CocoaPod",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_CocoaPodSapling",
+                            "ItemId": "(O)Cornucopia_CocoaPodSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_PearSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_PearSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Pear",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_PearSapling",
+                            "ItemId": "(O)Cornucopia_PearSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_PistachioSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_PistachioSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Pistachio",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_PistachioSapling",
+                            "ItemId": "(O)Cornucopia_PistachioSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_AlmondSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_AlmondSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Almond",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_AlmondSapling",
+                            "ItemId": "(O)Cornucopia_AlmondSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_BreadfruitSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_BreadfruitSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Breadfruit",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_BreadfruitSapling",
+                            "ItemId": "(O)Cornucopia_BreadfruitSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_CashewSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_CashewSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Cashew",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_CashewSapling",
+                            "ItemId": "(O)Cornucopia_CashewSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_DragonFruitSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_DragonFruitSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_DragonFruit",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_DragonFruitSapling",
+                            "ItemId": "(O)Cornucopia_DragonFruitSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_DurianSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_DurianSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Durian",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_DurianSapling",
+                            "ItemId": "(O)Cornucopia_DurianSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_FigSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_FigSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Fig",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_FigSapling",
+                            "ItemId": "(O)Cornucopia_FigSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_GrapefruitSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_GrapefruitSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Grapefruit",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_GrapefruitSapling",
+                            "ItemId": "(O)Cornucopia_GrapefruitSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_LemonSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_LemonSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Lemon",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_LemonSapling",
+                            "ItemId": "(O)Cornucopia_LemonSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_LimeSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_LimeSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Lime",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_LimeSapling",
+                            "ItemId": "(O)Cornucopia_LimeSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_LycheeSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_LycheeSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Lychee",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_LycheeSapling",
+                            "ItemId": "(O)Cornucopia_LycheeSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_NectarineSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_NectarineSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Nectarine",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_NectarineSapling",
+                            "ItemId": "(O)Cornucopia_NectarineSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_PapayaSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_PapayaSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Papaya",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_PapayaSapling",
+                            "ItemId": "(O)Cornucopia_PapayaSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_PecanSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_PecanSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Pecan",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_PecanSapling",
+                            "ItemId": "(O)Cornucopia_PecanSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_PersimmonSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_PersimmonSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Persimmon",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_PersimmonSapling",
+                            "ItemId": "(O)Cornucopia_PersimmonSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_PlantainSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_PlantainSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Plantain",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_PlantainSapling",
+                            "ItemId": "(O)Cornucopia_PlantainSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_PomeloSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_PomeloSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Pomelo",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_PomeloSapling",
+                            "ItemId": "(O)Cornucopia_PomeloSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_UmeSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_UmeSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Ume",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_UmeSapling",
+                            "ItemId": "(O)Cornucopia_UmeSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_WalnutSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_WalnutSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Walnut",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_WalnutSapling",
+                            "ItemId": "(O)Cornucopia_WalnutSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_YuzuSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_YuzuSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Yuzu",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_YuzuSapling",
+                            "ItemId": "(O)Cornucopia_YuzuSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_CamphorLeavesSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_CamphorLeavesSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_CamphorLeaves",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_CamphorLeavesSapling",
+                            "ItemId": "(O)Cornucopia_CamphorLeavesSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_CinnamonSticksSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_CinnamonSticksSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_CinnamonSticks",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_CinnamonSticksSapling",
+                            "ItemId": "(O)Cornucopia_CinnamonSticksSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_EucalyptusLeavesSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_EucalyptusLeavesSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_EucalyptusLeaves",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_EucalyptusLeavesSapling",
+                            "ItemId": "(O)Cornucopia_EucalyptusLeavesSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_MelaleucaLeavesSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_MelaleucaLeavesSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_MelaleucaLeaves",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_MelaleucaLeavesSapling",
+                            "ItemId": "(O)Cornucopia_MelaleucaLeavesSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreCrops_NutmegSapling": 
+                {    
+                    "Id": "Cornucopia.MoreCrops_NutmegSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Nutmeg",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_NutmegSapling",
+                            "ItemId": "(O)Cornucopia_NutmegSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                }
+        },
+    "When": {
+        "HasMod": "Cornucopia.MoreCrops"
+    },
+    "MoveEntries": [
+        { "ID": "Cornucopia.MoreCrops_AvocadoSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_CocoaPodSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_PearSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_PistachioSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_AlmondSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_BreadfruitSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_CashewSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_DragonFruitSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_DurianSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_FigSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_GrapefruitSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_LemonSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_LimeSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_LycheeSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_NectarineSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_PapayaSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_PecanSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_PersimmonSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_PlantainSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_PomeloSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_UmeSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_WalnutSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_YuzuSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_CamphorLeavesSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_CinnamonSticksSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_EucalyptusLeavesSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_MelaleucaLeavesSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreCrops_NutmegSapling", "BeforeID": "Default" },
+    ]
+},
+{
+    "LogName": "Add cornucopia more flowers compat to the Sapling Germination Box",
+    "Action": "EditData",
+    "Target": "Data/Machines",
+    "TargetField": [
+        "(BC)Fenler.sgb_SaplingGerminationBox",
+        "OutputRules"
+    ],
+    "Entries": 
+        {
+            "Cornucopia.MoreFlowers_HibiscusSapling": 
+                {    
+                    "Id": "Cornucopia.MoreFlowers_HibiscusSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Hibiscus",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_HibiscusSapling",
+                            "ItemId": "(O)Cornucopia_HibiscusSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreFlowers_JasmineSapling": 
+                {    
+                    "Id": "Cornucopia.MoreFlowers_JasmineSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Jasmine",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_JasmineSapling",
+                            "ItemId": "(O)Cornucopia_JasmineSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreFlowers_MagnoliaSapling": 
+                {    
+                    "Id": "Cornucopia.MoreFlowers_MagnoliaSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Magnolia",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_MagnoliaSapling",
+                            "ItemId": "(O)Cornucopia_MagnoliaSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreFlowers_WisteriaSapling": 
+                {    
+                    "Id": "Cornucopia.MoreFlowers_WisteriaSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_Wisteria",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_WisteriaSapling",
+                            "ItemId": "(O)Cornucopia_WisteriaSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+            "Cornucopia.MoreFlowers_YlangYlangSapling": 
+                {    
+                    "Id": "Cornucopia.MoreFlowers_YlangYlangSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Cornucopia_YlangYlang",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Cornucopia_YlangYlangSapling",
+                            "ItemId": "(O)Cornucopia_YlangYlangSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+        },
+    "When": {
+        "HasMod": "Cornucopia.MoreFlowers"
+    },
+    "MoveEntries": [
+        { "ID": "Cornucopia.MoreFlowers_HibiscusSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreFlowers_JasmineSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreFlowers_MagnoliaSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreFlowers_WisteriaSapling", "BeforeID": "Default" },
+        { "ID": "Cornucopia.MoreFlowers_YlangYlangSapling", "BeforeID": "Default" }
+    ]
+},
+{
+    "LogName": "Add wildflour compat to the Sapling Germination Box",
+    "Action": "EditData",
+    "Target": "Data/Machines",
+    "TargetField": [
+        "(BC)Fenler.sgb_SaplingGerminationBox",
+        "OutputRules"
+    ],
+    "Entries": 
+        {
+        "wildflour.ateliercrops_seedmaker_geranium": {
+            "Id": "wildflour.ateliercrops_seedmaker_geranium",
+            "Triggers": [
+                {
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": "wildflour.ateliercrops_geranium",
+                    "RequiredCount": 3
+                }
+            ],
+            "OutputItem": [
+                {
+                    "Id": "wildflour.ateliercrops_geranium_sapling",
+                    "ItemId": "(O)wildflour.ateliercrops_geranium_sapling",
+                    "MinStack": 4,
+                    "MaxStack": 6,
+                    "StackModifiers": [
+                        {
+                            "Id": "GoodForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 5 6",
+                            "Modification": "Add",
+                            "Amount": 1
+                        },
+                        {
+                            "Id": "GreatForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 7 9",
+                            "Modification": "Add",
+                            "Amount": 2
+                        },
+                        {
+                            "Id": "GreatestForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 10",
+                            "Modification": "Add",
+                            "Amount": 3
+                        }
+                    ]
+                }
+            ],
+            "DaysUntilReady": 2
+        },
+        "wildflour.ateliercrops_seedmaker_daisy": {
+            "Id": "wildflour.ateliercrops_seedmaker_daisy",
+            "Triggers": [
+                {
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": "wildflour.ateliercrops_daisy",
+                    "RequiredCount": 3
+                }
+            ],
+            "OutputItem": [
+                {
+                    "Id": "wildflour.ateliercrops_daisy_sapling",
+                    "ItemId": "(O)wildflour.ateliercrops_daisy_sapling",
+                    "MinStack": 4,
+                    "MaxStack": 6,
+                    "StackModifiers": [
+                        {
+                            "Id": "GoodForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 5 6",
+                            "Modification": "Add",
+                            "Amount": 1
+                        },
+                        {
+                            "Id": "GreatForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 7 9",
+                            "Modification": "Add",
+                            "Amount": 2
+                        },
+                        {
+                            "Id": "GreatestForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 10",
+                            "Modification": "Add",
+                            "Amount": 3
+                        }
+                    ]
+                }
+            ],
+            "DaysUntilReady": 2
+        },
+        "wildflour.ateliercrops_seedmaker_primrose": {
+            "Id": "wildflour.ateliercrops_seedmaker_primrose",
+            "Triggers": [
+                {
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": "wildflour.ateliercrops_primrose",
+                    "RequiredCount": 3
+                }
+            ],
+            "OutputItem": [
+                {
+                    "Id": "wildflour.ateliercrops_primrose_sapling",
+                    "ItemId": "(O)wildflour.ateliercrops_primrose_sapling",
+                    "MinStack": 4,
+                    "MaxStack": 6,
+                    "StackModifiers": [
+                        {
+                            "Id": "GoodForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 5 6",
+                            "Modification": "Add",
+                            "Amount": 1
+                        },
+                        {
+                            "Id": "GreatForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 7 9",
+                            "Modification": "Add",
+                            "Amount": 2
+                        },
+                        {
+                            "Id": "GreatestForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 10",
+                            "Modification": "Add",
+                            "Amount": 3
+                        }
+                    ]
+                }
+            ],
+            "DaysUntilReady": 2
+        },
+        "wildflour.ateliercrops_seedmaker_chiffon": {
+            "Id": "wildflour.ateliercrops_seedmaker_chiffon",
+            "Triggers": [
+                {
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": "wildflour.ateliercrops_chiffon",
+                    "RequiredCount": 3
+                }
+            ],
+            "OutputItem": [
+                {
+                    "Id": "wildflour.ateliercrops_chiffon_sapling",
+                    "ItemId": "(O)wildflour.ateliercrops_chiffon_sapling",
+                    "MinStack": 4,
+                    "MaxStack": 6,
+                    "StackModifiers": [
+                        {
+                            "Id": "GoodForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 5 6",
+                            "Modification": "Add",
+                            "Amount": 1
+                        },
+                        {
+                            "Id": "GreatForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 7 9",
+                            "Modification": "Add",
+                            "Amount": 2
+                        },
+                        {
+                            "Id": "GreatestForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 10",
+                            "Modification": "Add",
+                            "Amount": 3
+                        }
+                    ]
+                }
+            ],
+            "DaysUntilReady": 2
+        },  
+        "wildflour.ateliercrops_seedmaker_violet": {
+            "Id": "wildflour.ateliercrops_seedmaker_violet",
+            "Triggers": [
+                {
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": "wildflour.ateliercrops_violet",
+                    "RequiredCount": 3
+                }
+            ],
+            "OutputItem": [
+                {
+                    "Id": "wildflour.ateliercrops_violet_sapling",
+                    "ItemId": "(O)wildflour.ateliercrops_violet_sapling",
+                    "MinStack": 4,
+                    "MaxStack": 6,
+                    "StackModifiers": [
+                        {
+                            "Id": "GoodForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 5 6",
+                            "Modification": "Add",
+                            "Amount": 1
+                        },
+                        {
+                            "Id": "GreatForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 7 9",
+                            "Modification": "Add",
+                            "Amount": 2
+                        },
+                        {
+                            "Id": "GreatestForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 10",
+                            "Modification": "Add",
+                            "Amount": 3
+                        }
+                    ]
+                }
+            ],
+            "DaysUntilReady": 2
+        },
+        "wildflour.ateliercrops_seedmaker_dawn_lily": {
+            "Id": "wildflour.ateliercrops_seedmaker_dawn_lily",
+            "Triggers": [
+                {
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": "wildflour.ateliercrops_dawn_lily",
+                    "RequiredCount": 3
+                }
+            ],
+            "OutputItem": [
+                {
+                    "Id": "wildflour.ateliercrops_dawn_sapling",
+                    "ItemId": "(O)wildflour.ateliercrops_dawn_sapling",
+                    "MinStack": 4,
+                    "MaxStack": 6,
+                    "StackModifiers": [
+                        {
+                            "Id": "GoodForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 5 6",
+                            "Modification": "Add",
+                            "Amount": 1
+                        },
+                        {
+                            "Id": "GreatForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 7 9",
+                            "Modification": "Add",
+                            "Amount": 2
+                        },
+                        {
+                            "Id": "GreatestForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 10",
+                            "Modification": "Add",
+                            "Amount": 3
+                        }
+                    ]
+                }
+            ],
+            "DaysUntilReady": 2
+        },
+        "wildflour.ateliercrops_seedmaker_dusk_lily": {
+            "Id": "wildflour.ateliercrops_seedmaker_dusk_lily",
+            "Triggers": [
+                {
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": "wildflour.ateliercrops_dusk_lily",
+                    "RequiredCount": 3
+                }
+            ],
+            "OutputItem": [
+                {
+                    "Id": "wildflour.ateliercrops_dusk_sapling",
+                    "ItemId": "(O)wildflour.ateliercrops_dusk_sapling",
+                    "MinStack": 4,
+                    "MaxStack": 6,
+                    "StackModifiers": [
+                        {
+                            "Id": "GoodForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 5 6",
+                            "Modification": "Add",
+                            "Amount": 1
+                        },
+                        {
+                            "Id": "GreatForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 7 9",
+                            "Modification": "Add",
+                            "Amount": 2
+                        },
+                        {
+                            "Id": "GreatestForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 10",
+                            "Modification": "Add",
+                            "Amount": 3
+                        }
+                    ]
+                }
+            ],
+            "DaysUntilReady": 2
+        },
+        "wildflour.ateliercrops_seedmaker_pistachio": {
+            "Id": "wildflour.ateliercrops_seedmaker_pistachio",
+            "Triggers": [
+                {
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": "wildflour.ateliercrops_pistachio",
+                    "RequiredCount": 3
+                }
+            ],
+            "OutputItem": [
+                {
+                    "Id": "wildflour.ateliercrops_pistachiosapling",
+                    "ItemId": "(O)wildflour.ateliercrops_pistachiosapling",
+                    "MinStack": 4,
+                    "MaxStack": 6,
+                    "StackModifiers": [
+                        {
+                            "Id": "GreatestForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 10",
+                            "Modification": "Add",
+                            "Amount": 1
+                        }
+                    ]
+                }
+            ],
+            "DaysUntilReady": 2
+        },
+        "wildflour.ateliercrops_seedmaker_olive": {
+            "Id": "wildflour.ateliercrops_seedmaker_olive",
+            "Triggers": [
+                {
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": "wildflour.ateliercrops_olive",
+                    "RequiredCount": 3
+                }
+            ],
+            "OutputItem": [
+                {
+                    "Id": "wildflour.ateliercrops_olivesapling",
+                    "ItemId": "(O)wildflour.ateliercrops_olivesapling",
+                    "MinStack": 4,
+                    "MaxStack": 6,
+                    "StackModifiers": [
+                        {
+                            "Id": "GreatestForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 10",
+                            "Modification": "Add",
+                            "Amount": 1
+                        }
+                    ]
+                }
+            ],
+            "DaysUntilReady": 2
+        },
+        "wildflour.ateliercrops_seedmaker_cashew": {
+            "Id": "wildflour.ateliercrops_seedmaker_cashew",
+            "Triggers": [
+                {
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": "wildflour.ateliercrops_cashew",
+                    "RequiredCount": 3
+                }
+            ],
+            "OutputItem": [
+                {
+                    "Id": "wildflour.ateliercrops_cashewsapling",
+                    "ItemId": "(O)wildflour.ateliercrops_cashewsapling",
+                    "MinStack": 4,
+                    "MaxStack": 6,
+                    "StackModifiers": [
+                        {
+                            "Id": "GreatestForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 10",
+                            "Modification": "Add",
+                            "Amount": 1
+                        }
+                    ]
+                }
+            ],
+            "DaysUntilReady": 2
+        },
+        "wildflour.ateliercrops_seedmaker_walnut": {
+            "Id": "wildflour.ateliercrops_seedmaker_walnut",
+            "Triggers": [
+                {
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": "wildflour.ateliercrops_walnut",
+                    "RequiredCount": 3
+                }
+            ],
+            "OutputItem": [
+                {
+                    "Id": "wildflour.ateliercrops_walnutsapling",
+                    "ItemId": "(O)wildflour.ateliercrops_walnutsapling",
+                    "MinStack": 4,
+                    "MaxStack": 6,
+                    "StackModifiers": [
+                        {
+                            "Id": "GreatestForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 10",
+                            "Modification": "Add",
+                            "Amount": 1
+                        }
+                    ]
+                }
+            ],
+            "DaysUntilReady": 2
+        },
+        "wildflour.ateliercrops_seedmaker_lemon": {
+            "Id": "wildflour.ateliercrops_seedmaker_lemon",
+            "Triggers": [
+                {
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": "wildflour.ateliercrops_lemon",
+                    "RequiredCount": 3
+                }
+            ],
+            "OutputItem": [
+                {
+                    "Id": "wildflour.ateliercrops_lemonsapling",
+                    "ItemId": "(O)wildflour.ateliercrops_lemonsapling",
+                    "MinStack": 4,
+                    "MaxStack": 6,
+                    "StackModifiers": [
+                        {
+                            "Id": "GreatestForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 10",
+                            "Modification": "Add",
+                            "Amount": 1
+                        }
+                    ]
+                }
+            ],
+            "DaysUntilReady": 2
+        },
+        "wildflour.ateliercrops_seedmaker_lime": {
+            "Id": "wildflour.ateliercrops_seedmaker_lime",
+            "Triggers": [
+                {
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": "wildflour.ateliercrops_lime",
+                    "RequiredCount": 3
+                }
+            ],
+            "OutputItem": [
+                {
+                    "Id": "wildflour.ateliercrops_limesapling",
+                    "ItemId": "(O)wildflour.ateliercrops_limesapling",
+                    "MinStack": 4,
+                    "MaxStack": 6,
+                    "StackModifiers": [
+                        {
+                            "Id": "GreatestForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 10",
+                            "Modification": "Add",
+                            "Amount": 1
+                        }
+                    ]
+                }
+            ],
+            "DaysUntilReady": 2
+        },
+        "wildflour.ateliercrops_seedmaker_almond": {
+            "Id": "wildflour.ateliercrops_seedmaker_almond",
+            "Triggers": [
+                {
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": "wildflour.ateliercrops_almond",
+                    "RequiredCount": 3
+                }
+            ],
+            "OutputItem": [
+                {
+                    "Id": "wildflour.ateliercrops_almondsapling",
+                    "ItemId": "(O)wildflour.ateliercrops_almondsapling",
+                    "MinStack": 4,
+                    "MaxStack": 6,
+                    "StackModifiers": [
+                        {
+                            "Id": "GreatestForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 10",
+                            "Modification": "Add",
+                            "Amount": 1
+                        }
+                    ]
+                }
+            ],
+            "DaysUntilReady": 2
+        },
+        "wildflour.ateliercrops_seedmaker_anise": {
+            "Id": "wildflour.ateliercrops_seedmaker_anise",
+            "Triggers": [
+                {
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": "wildflour.ateliercrops_anise",
+                    "RequiredCount": 3
+                }
+            ],
+            "OutputItem": [
+                {
+                    "Id": "wildflour.ateliercrops_anise_sapling",
+                    "ItemId": "(O)wildflour.ateliercrops_anise_sapling",
+                    "MinStack": 4,
+                    "MaxStack": 6,
+                    "StackModifiers": [
+                        {
+                            "Id": "GreatestForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 10",
+                            "Modification": "Add",
+                            "Amount": 1
+                        }
+                    ]
+                }
+            ],
+            "DaysUntilReady": 2
+        },
+        "wildflour.ateliercrops_seedmaker_cacaopod": {
+            "Id": "wildflour.ateliercrops_seedmaker_cacaopod",
+            "Triggers": [
+                {
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": "wildflour.ateliercrops_cacaopod",
+                    "RequiredCount": 3
+                }
+            ],
+            "OutputItem": [
+                {
+                    "Id": "wildflour.ateliercrops_cacaopodsapling",
+                    "ItemId": "(O)wildflour.ateliercrops_cacaopodsapling",
+                    "MinStack": 4,
+                    "MaxStack": 6,
+                    "StackModifiers": [
+                        {
+                            "Id": "GreatestForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 10",
+                            "Modification": "Add",
+                            "Amount": 1
+                        }
+                    ]
+                }
+            ],
+            "DaysUntilReady": 2
+        },
+        "wildflour.ateliercrops_seedmaker_elderberries": {
+            "Id": "wildflour.ateliercrops_seedmaker_elderberries",
+            "Triggers": [
+                {
+                    "Trigger": "ItemPlacedInMachine",
+                    "RequiredItemId": "wildflour.ateliercrops_elderberries",
+                    "RequiredCount": 3
+                }
+            ],
+            "OutputItem": [
+                {
+                    "Id": "wildflour.ateliercrops_elder_sapling",
+                    "ItemId": "(O)wildflour.ateliercrops_elder_sapling",
+                    "MinStack": 4,
+                    "MaxStack": 6,
+                    "StackModifiers": [
+                        {
+                            "Id": "GreatestForager",
+                            "Condition": "PLAYER_FORAGING_LEVEL Any 10",
+                            "Modification": "Add",
+                            "Amount": 1
+                        }
+                    ]
+                }
+            ],
+            "DaysUntilReady": 2
+        }
+        },
+    "When": {
+        "HasMod": "wildflour.ateliercrops"
+    },
+    "MoveEntries": [
+        { "ID": "wildflour.ateliercrops_seedmaker_geranium", "BeforeID": "Default" },
+        { "ID": "wildflour.ateliercrops_seedmaker_daisy", "BeforeID": "Default" },
+        { "ID": "wildflour.ateliercrops_seedmaker_primrose", "BeforeID": "Default" },
+        { "ID": "wildflour.ateliercrops_seedmaker_chiffon", "BeforeID": "Default" },
+        { "ID": "wildflour.ateliercrops_seedmaker_violet", "BeforeID": "Default" },
+        { "ID": "wildflour.ateliercrops_seedmaker_dawn_lily", "BeforeID": "Default" },
+        { "ID": "wildflour.ateliercrops_seedmaker_dusk_lily", "BeforeID": "Default" },
+        { "ID": "wildflour.ateliercrops_seedmaker_almond", "BeforeID": "Default" },
+        { "ID": "wildflour.ateliercrops_seedmaker_pistachio", "BeforeID": "Default" },
+        { "ID": "wildflour.ateliercrops_seedmaker_olive", "BeforeID": "Default" },
+        { "ID": "wildflour.ateliercrops_seedmaker_cashew", "BeforeID": "Default" },
+        { "ID": "wildflour.ateliercrops_seedmaker_walnut", "BeforeID": "Default" },
+        { "ID": "wildflour.ateliercrops_seedmaker_lemon", "BeforeID": "Default" },
+        { "ID": "wildflour.ateliercrops_seedmaker_lime", "BeforeID": "Default" },
+        { "ID": "wildflour.ateliercrops_seedmaker_cacaopod", "BeforeID": "Default" },
+        { "ID": "wildflour.ateliercrops_seedmaker_anise", "BeforeID": "Default" },
+        { "ID": "wildflour.ateliercrops_seedmaker_elderberries", "BeforeID": "Default" },
+    ]
+},
+{
+    "LogName": "Add MtVapius compat to the Sapling Germination Box",
+    "Action": "EditData",
+    "Target": "Data/Machines",
+    "TargetField": [
+        "(BC)Fenler.sgb_SaplingGerminationBox",
+        "OutputRules"
+    ],
+    "Entries": 
+        {
+                "Lumisteria.MtVapius_FrostAppleSapling": 
+                {    
+                    "Id": "Lumisteria.MtVapius_FrostAppleSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Lumisteria.MtVapius_FrostApple",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Lumisteria.MtVapius_FrostAppleSapling",
+                            "ItemId": "(O)Lumisteria.MtVapius_FrostAppleSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+                "Lumisteria.MtVapius_OliveSapling": 
+                {    
+                    "Id": "Lumisteria.MtVapius_OliveSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Lumisteria.MtVapius_Olive",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Lumisteria.MtVapius_OliveSapling",
+                            "ItemId": "(O)Lumisteria.MtVapius_OliveSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+                "Lumisteria.MtVapius_GrapeSapling": 
+                {    
+                    "Id": "Lumisteria.MtVapius_GrapeSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Lumisteria.MtVapius_WhiteGrape",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Lumisteria.MtVapius_GrapeSapling",
+                            "ItemId": "(O)Lumisteria.MtVapius_GrapeSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+                "Lumisteria.MtVapius_CasalotierSapling": 
+                {    
+                    "Id": "Lumisteria.MtVapius_CasalotierSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Lumisteria.MtVapius_CasalotierFlower",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Lumisteria.MtVapius_CasalotierSapling",
+                            "ItemId": "(O)Lumisteria.MtVapius_CasalotierSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+                "Lumisteria.MtVapius_LarimarSapling": 
+                {    
+                    "Id": "Lumisteria.MtVapius_LarimarSapling",
+                    "Triggers": [
+                        {
+                            "Trigger": "ItemPlacedInMachine",
+                            "RequiredItemId": "Lumisteria.MtVapius_Larimar",
+                            "RequiredCount": 3,
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "Id": "Lumisteria.MtVapius_LarimarSapling",
+                            "ItemId": "(O)Lumisteria.MtVapius_LarimarSapling",
+                            "MinStack": -1,
+                        }
+                    ],
+                    "DaysUntilReady": 2,
+                },
+        },
+    "When": {
+        "HasMod": "Lumisteria.MtVapius"
+    },
+    "MoveEntries": [
+                {
+                    "ID": "Lumisteria.MtVapius_FrostAppleSapling",
+                    "BeforeID": "Default"
+                },
+                {
+                    "ID": "Lumisteria.MtVapius_OliveSapling",
+                    "BeforeID": "Default"
+                },
+                {
+                    "ID": "Lumisteria.MtVapius_GrapeSapling",
+                    "BeforeID": "Default"
+                },
+                {
+                    "ID": "Lumisteria.MtVapius_CasalotierSapling",
+                    "BeforeID": "Default"
+                },
+                {
+                    "ID": "Lumisteria.MtVapius_LarimarSapling",
+                    "BeforeID": "Default"
+                },
+    ]
+},
+]
+}

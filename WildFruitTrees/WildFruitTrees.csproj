@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>WildFruitTrees</RootNamespace>
+	<GamePath>E:\SteamLibrary\steamapps\common\Stardew Valley</GamePath>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<EnableHarmony>true</EnableHarmony>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="assets\json_assets\**" />
+    <EmbeddedResource Remove="assets\json_assets\**" />
+    <None Remove="assets\json_assets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.1.1" />
+	<Reference Include="GenericModConfigMenu" HintPath="$(StardewValleyGamePath)\mods\[A] Core Mods\GenericModConfigMenu\GenericModConfigMenu.dll" Private="False" />
+	<Reference Include="SpaceCore" HintPath="$(StardewValleyGamePath)\mods\[A] Core Mods\SpaceCore\SpaceCore.dll" Private="False" />
+  </ItemGroup>
+
+</Project>

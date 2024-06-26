@@ -1,0 +1,6 @@
+{
+  "ResetAllLocations": false,
+  "ResetNonFarmableLocations": false,
+  "OperateOnNewGamesOnly": true,
+  "ReplacementProbability": 0.10000000149011612
+}

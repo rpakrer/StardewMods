@@ -1,0 +1,17 @@
+﻿{
+    "Name": "Wild Fruit Trees",
+    "Author": "HeyImAmethyst",
+    "Version": "1.1.0",
+    "Description": "This mod adds magic to Stardew Valley.",
+    "UniqueID": "Fenler.WildFruitTrees",
+    "EntryDll": "WildFruitTrees.dll",
+    "MinimumApiVersion": "4.0.7",
+    "dependencies": [
+        {
+            "UniqueID": "spacechase0.SpaceCore",
+            "MinimumVersion": "1.21.2",
+            "isRequired": true
+        },
+    ],
+    "UpdateKeys": ["Nexus:24409"]
+}

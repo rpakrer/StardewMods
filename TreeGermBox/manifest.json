@@ -1,0 +1,12 @@
+{
+    "Name": "Sapling Germination Box",
+    "Author": "Fenler",
+    "Version": "1.0.0",
+    "Description": "Provides early, expensive tool for making saplings for tree produce",
+    "UniqueID": "Fenler.SaplingBox",
+    "ContentPackFor": {
+        "UniqueID": "Pathoschild.ContentPatcher",
+        "MinimumVersion": "2.2.0"
+    },
+    "MinimumApiVersion": "4.0.0",
+}
